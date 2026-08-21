@@ -26,6 +26,8 @@ This commands includes
 • Other IP Commands e.g. show ip route etc.
 <BR>
 ```
+client.py
+```
 s = socket.socket() s.connect(('localhost', 8000))
 
 while True: ip = input("Enter the website you want to ping (or type 'exit' to quit): ") s.send(ip.encode('utf-8')) if ip.lower() == 'exit': break print(s.recv(4096).decode('utf-8'))
@@ -33,7 +35,7 @@ while True: ip = input("Enter the website you want to ping (or type 'exit' to qu
 s.close()
 
 server.py
-
+```
 import socket from pythonping import ping
 
 s = socket.socket() s.bind(('localhost', 8000)) s.listen(5) print("Server listening on port 8000...") c, addr = s.accept() print(f"Connection from {addr}")
@@ -44,7 +46,9 @@ c.close()
 ```
 
 ## Output
+
 <img width="661" height="110" alt="Screenshot 2026-08-21 140824" src="https://github.com/user-attachments/assets/6ea2467f-5166-4642-b59c-293d98ae29e2" />
+
 <img width="713" height="351" alt="Screenshot 2026-08-21 140732" src="https://github.com/user-attachments/assets/393a4c7c-58b6-4e6d-91c8-67920d98f412" />
 
 ## Result
